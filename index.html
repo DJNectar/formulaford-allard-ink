@@ -141,13 +141,36 @@ section{padding:56px 0;border-top:1px solid var(--line)}
 .term p{margin:0;color:var(--muted);font-size:15.5px}
 
 /* contact */
-.contact{background:var(--ink);color:var(--bg);border-top:0}
-.contact .sec-head h2{color:var(--bg)}
-.contact .lede{color:color-mix(in srgb,var(--bg) 80%,transparent)}
-.contact .btn{border-color:var(--bg);color:var(--bg)}
-.contact .btn.primary{border-color:var(--red);color:#fff}
-.big-price{font:800 clamp(48px,9vw,96px)/1 "Barlow Condensed","Arial Narrow",Arial,sans-serif;margin:18px 0 6px}
-.big-price small{font-size:.35em;letter-spacing:.1em;color:color-mix(in srgb,var(--bg) 65%,transparent);margin-left:8px}
+.contact{background:#16130f;color:#f4f1ec;border-top:0;padding:72px 0}
+.contact .sec-head h2{color:#fff}
+.c-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start}
+@media(max-width:900px){.c-grid{grid-template-columns:1fr;gap:36px}}
+.c-lede{font-size:clamp(18px,2vw,21px);color:#cfc9c0;margin:0 0 28px;max-width:520px}
+.c-price{border-top:1px solid #3a352f;border-bottom:1px solid #3a352f;padding:22px 0;margin-bottom:26px}
+.c-price .lbl{font:600 12px/1 "Barlow Condensed","Arial Narrow",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#9d968b}
+.c-price .amt{font:800 clamp(52px,7vw,80px)/1 "Barlow Condensed","Arial Narrow",Arial,sans-serif;color:#fff;margin:10px 0 8px;display:flex;align-items:baseline;gap:10px}
+.c-price .amt small{font:700 .3em/1 "Barlow Condensed","Arial Narrow",Arial,sans-serif;letter-spacing:.16em;color:#9d968b}
+.c-price .sub{font:600 13px/1 "Barlow Condensed","Arial Narrow",Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#ff6a5f}
+.c-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.c-list li{display:flex;gap:12px;align-items:flex-start;color:#e6e1d9;font-size:16px}
+.c-list svg{width:18px;height:18px;flex:none;margin-top:3px;color:var(--red)}
+.c-card{background:#fff;color:#16130f;border-radius:8px;padding:30px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+@media(max-width:520px){.c-card{padding:22px}}
+.c-card h3{font:800 28px/1 "Barlow Condensed","Arial Narrow",Arial,sans-serif;text-transform:uppercase;margin:0 0 6px}
+.c-card .hint{color:#5d5a55;font-size:15px;margin:0 0 22px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.f-row{grid-template-columns:1fr}}
+.fld{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;min-width:0}
+.fld label{font:600 12px/1 "Barlow Condensed","Arial Narrow",Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#5d5a55}
+.fld input,.fld textarea,.fld select{font:400 16px/1.4 Barlow,system-ui,sans-serif;color:#16130f;background:#f6f6f4;border:1.5px solid #e4e2de;border-radius:5px;padding:12px 13px;width:100%;transition:border-color .15s,background .15s}
+.fld textarea{min-height:120px;resize:vertical}
+.fld input:focus,.fld textarea:focus,.fld select:focus{outline:none;border-color:#16130f;background:#fff}
+.c-send{width:100%;justify-content:center;padding:16px 22px;font-size:17px;margin-top:4px}
+.c-alt{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:20px;padding-top:18px;border-top:1px solid #e4e2de;font-size:15px;color:#5d5a55}
+.c-alt a{font-weight:600;color:#16130f;text-decoration:none;border-bottom:1.5px solid var(--red)}
+.copy{all:unset;cursor:pointer;font:700 12px/1 "Barlow Condensed","Arial Narrow",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;border:1.5px solid #16130f;border-radius:999px;color:#16130f}
+.copy:hover{background:#16130f;color:#fff}
+.f-note{font-size:13px;color:#8a857d;margin:10px 0 0;text-align:center}
 footer{padding:22px 0 40px;color:var(--muted);font-size:14px;text-align:center}
 
 [data-lang-fr] [lang="en"]{display:none!important}
@@ -324,13 +347,53 @@ html:not([data-lang-fr]) [lang="fr"]{display:none!important}
   <section id="contact" class="contact">
     <div class="wrap">
       <div class="sec-head"><span class="num">06</span><h2><span lang="en">Enquire</span><span lang="fr">Me contacter</span></h2></div>
-      <p class="lede" lang="en">A rare opportunity to get into vintage Formula Ford with a proper spares cushion behind you. Serious enquiries welcome.</p>
-      <p class="lede" lang="fr">Une occasion rare d’entrer dans le monde de la Formula Ford vintage avec un inventaire de pièces très complet. Demandes sérieuses seulement.</p>
-      <div class="big-price"><span lang="en">$26,000<small>CAD</small></span><span lang="fr">26 000 $<small>CA</small></span></div>
-      <p class="lede" style="margin-top:6px"><a href="mailto:allard.chris@gmail.com" style="font-weight:600">allard.chris@gmail.com</a></p>
-      <div class="cta-row" id="contact-btns">
-        <a class="btn primary" id="email-btn" hidden href="#"><span lang="en">Email me</span><span lang="fr">M’écrire</span></a>
-        <a class="btn" id="phone-btn" hidden href="#"><span lang="en">Call / text</span><span lang="fr">Appel / texto</span></a>
+      <div class="c-grid">
+        <div>
+          <p class="c-lede" lang="en">A rare chance to get into vintage Formula Ford with a proper spares cushion behind you. Serious enquiries welcome.</p>
+          <p class="c-lede" lang="fr">Une occasion rare d’entrer dans la Formula Ford vintage avec un inventaire de pièces très complet. Demandes sérieuses seulement.</p>
+          <div class="c-price">
+            <div class="lbl"><span lang="en">Asking price</span><span lang="fr">Prix demandé</span></div>
+            <div class="amt"><span lang="en">$26,000</span><span lang="fr">26 000 $</span><small lang="en">CAD</small><small lang="fr">CA</small></div>
+            <div class="sub"><span lang="en">Complete package only</span><span lang="fr">Ensemble complet seulement</span></div>
+          </div>
+          <ul class="c-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span lang="en">Rolling chassis #127 on its Hewland Mk9</span><span lang="fr">Châssis roulant no 127 sur boîte Hewland Mk9</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span lang="en">Four 1600cc crossflow engines, two Mecar-built</span><span lang="fr">Quatre moteurs Crossflow 1600 cc, dont deux Mecar</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span lang="en">Two complete sets of bodywork</span><span lang="fr">Deux ensembles complets de carrosserie</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span lang="en">Deep spares: gear sets, brakes, suspension, clutches</span><span lang="fr">Pièces : rapports, freins, suspension, embrayages</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span lang="en">Viewing by appointment, Montréal area · borescope available</span><span lang="fr">Visite sur rendez-vous, région de Montréal · endoscopie possible</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span lang="en">US &amp; international buyers welcome</span><span lang="fr">Acheteurs É.-U. et internationaux bienvenus</span></li>
+          </ul>
+        </div>
+
+        <form class="c-card" id="enq" novalidate>
+          <h3><span lang="en">Send an enquiry</span><span lang="fr">Envoyer une demande</span></h3>
+          <p class="hint" lang="en">Tell me a little about yourself and I’ll reply with more photos, details or a time to view.</p>
+          <p class="hint" lang="fr">Présentez-vous en quelques mots et je vous répondrai avec plus de photos, de détails ou un moment pour une visite.</p>
+          <div class="f-row">
+            <div class="fld"><label for="f-name"><span lang="en">Name</span><span lang="fr">Nom</span></label><input id="f-name" name="fname" autocomplete="name" required></div>
+            <div class="fld"><label for="f-loc"><span lang="en">Location</span><span lang="fr">Lieu</span></label><input id="f-loc" name="floc" autocomplete="address-level2" data-ph-en="City, country" data-ph-fr="Ville, pays"></div>
+          </div>
+          <div class="f-row">
+            <div class="fld"><label for="f-phone"><span lang="en">Phone (optional)</span><span lang="fr">Téléphone (facultatif)</span></label><input id="f-phone" name="fphone" type="tel" autocomplete="tel"></div>
+            <div class="fld"><label for="f-topic"><span lang="en">I’d like</span><span lang="fr">Je souhaite</span></label>
+              <select id="f-topic" name="ftopic">
+                <option data-en="More information" data-fr="Plus d’information">More information</option>
+                <option data-en="More photos" data-fr="Plus de photos">More photos</option>
+                <option data-en="To arrange a viewing" data-fr="Planifier une visite">To arrange a viewing</option>
+                <option data-en="A borescope inspection" data-fr="Une inspection à l’endoscope">A borescope inspection</option>
+                <option data-en="To discuss shipping" data-fr="Discuter du transport">To discuss shipping</option>
+              </select></div>
+          </div>
+          <div class="fld"><label for="f-msg"><span lang="en">Message</span><span lang="fr">Message</span></label><textarea id="f-msg" name="fmsg" data-ph-en="Your racing plans, questions, timing…" data-ph-fr="Vos projets de course, questions, échéancier…"></textarea></div>
+          <button class="btn primary c-send" type="submit"><span lang="en">Send enquiry</span><span lang="fr">Envoyer la demande</span></button>
+          <p class="f-note" lang="en">Opens your email app with the message ready to send.</p>
+          <p class="f-note" lang="fr">Ouvre votre application courriel avec le message prêt à envoyer.</p>
+          <div class="c-alt">
+            <span><span lang="en">Or email directly:</span><span lang="fr">Ou écrivez directement :</span> <a href="mailto:allard.chris@gmail.com">allard.chris@gmail.com</a></span>
+            <button class="copy" type="button" id="copy-email"><span lang="en">Copy</span><span lang="fr">Copier</span></button>
+          </div>
+        </form>
       </div>
     </div>
   </section>
@@ -347,8 +410,7 @@ html:not([data-lang-fr]) [lang="fr"]{display:none!important}
 </div>
 
 <script>
-/* ---- Contact details: fill these in, leave '' to hide the button ---- */
-const CONTACT = { email: 'allard.chris@gmail.com', phone: '' };
+const EMAIL = 'allard.chris@gmail.com';
 
 const PHOTOS = [
   ['g_1be64a93','car'],['g_0b38a9c3','car'],['g_45026e7d','car'],
@@ -365,7 +427,8 @@ function setLang(l, remember){
   document.querySelectorAll('[data-set-lang]').forEach(b=>b.setAttribute('aria-pressed', b.dataset.setLang===l));
   document.title = l==='fr' ? 'Reynard FF83 à vendre' : 'Reynard FF83 For Sale';
   if(remember){ try{ localStorage.setItem('lang', l) }catch(e){} }
-  setContact();
+  document.querySelectorAll('[data-ph-en]').forEach(el=>el.placeholder = el.dataset[l==='fr'?'phFr':'phEn']);
+  document.querySelectorAll('option[data-en]').forEach(o=>o.textContent = o.dataset[l]);
 }
 const qs = new URLSearchParams(location.search).get('lang');
 let saved=null; try{ saved = localStorage.getItem('lang') }catch(e){}
@@ -374,15 +437,32 @@ document.querySelectorAll('[data-set-lang]').forEach(b=>b.onclick=()=>setLang(b.
 const deviceFr = (navigator.languages && navigator.languages.length ? navigator.languages[0] : navigator.language || '').toLowerCase().startsWith('fr');
 setLang(qs==='fr'||qs==='en' ? qs : (saved==='fr'||saved==='en') ? saved : (deviceFr ? 'fr' : 'en'));
 
-function setContact(){
+/* enquiry form -> pre-filled email */
+const enq = document.getElementById('enq');
+enq.addEventListener('submit', e=>{
+  e.preventDefault();
   const fr = document.documentElement.lang==='fr';
-  const e = document.getElementById('email-btn'), p = document.getElementById('phone-btn');
-  if(CONTACT.email){
-    const subj = fr ? 'Reynard FF83 – demande' : 'Reynard FF83 enquiry';
-    e.href = 'mailto:'+CONTACT.email+'?subject='+encodeURIComponent(subj); e.hidden=false;
-  }
-  if(CONTACT.phone){ p.href = 'tel:'+CONTACT.phone.replace(/[^\d+]/g,''); p.hidden=false; }
-}
+  const g = id => document.getElementById(id).value.trim();
+  const nameEl = document.getElementById('f-name');
+  if(!g('f-name')){ nameEl.focus(); nameEl.style.borderColor='#d81e1e'; return; }
+  const sel = document.getElementById('f-topic');
+  const topic = sel.options[sel.selectedIndex].textContent;
+  const L = fr ? {s:'Reynard FF83 – demande',n:'Nom',l:'Lieu',p:'Téléphone',t:'Je souhaite'} : {s:'Reynard FF83 enquiry',n:'Name',l:'Location',p:'Phone',t:"I'd like"};
+  const lines = [];
+  if(g('f-msg')) lines.push(g('f-msg'), '');
+  lines.push('—', L.n+': '+g('f-name'));
+  if(g('f-loc')) lines.push(L.l+': '+g('f-loc'));
+  if(g('f-phone')) lines.push(L.p+': '+g('f-phone'));
+  lines.push(L.t+': '+topic);
+  location.href = 'mailto:'+EMAIL+'?subject='+encodeURIComponent(L.s+' — '+g('f-name'))+'&body='+encodeURIComponent(lines.join('\n'));
+});
+document.getElementById('f-name').addEventListener('input', e=>e.target.style.borderColor='');
+document.getElementById('copy-email').addEventListener('click', e=>{
+  const btn = e.currentTarget, fr = document.documentElement.lang==='fr';
+  const reset = btn.innerHTML;
+  const done = ()=>{ btn.textContent = fr ? 'Copié ✓' : 'Copied ✓'; setTimeout(()=>{ btn.innerHTML = reset; }, 1800); };
+  try{ navigator.clipboard.writeText(EMAIL).then(done, done); }catch(err){ done(); }
+});
 
 /* gallery */
 const grid = document.getElementById('grid');
